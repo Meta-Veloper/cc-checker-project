@@ -50,8 +50,8 @@ const validateCred = (arr) => {
 // Finds invalid credit card nums and adds them to an array. This function in particular loops through a nested array.
 
 const findInvalidCards = (nestedArr) => {
-  //empthy array
   let newInvalidCardsArr = [];
+  
   //filters invalid cards from the array
   let validFilterWork = nestedArr.filter((element) => {
     let findOut = validateCred(element);
@@ -65,8 +65,7 @@ const findInvalidCards = (nestedArr) => {
 //Find the name of the card company that issued invalid cards.
 const idInvalidCardCompanies = (badCardComp) => {
   let fNumBad = findInvalidCards(badCardComp);
-
-////////////////////////////////////////////////////////
+  
   let getFirstNum = fNumBad.map((element) => {
     let fNum = element[0];
     //Grabs the first number to identify source of CC.
@@ -87,10 +86,9 @@ const idInvalidCardCompanies = (badCardComp) => {
     let uniqueChars = [...new Set(getFirstNum)];
     
     console.log(uniqueChars);
-    return uniqueChars;
-      
+    return uniqueChars;      
 }
-////////////////////////////////////////////////////////
+
 
 
 console.log(findInvalidCards(batch));
